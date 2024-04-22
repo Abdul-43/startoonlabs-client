@@ -16,7 +16,7 @@ const Login = (props) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8800/api/login`,
+        `https://startoonlabs-dashboard-server.onrender.com/api/login`,
         {  email, password }
       );
       const json = response.data;
