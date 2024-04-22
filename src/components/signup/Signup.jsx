@@ -19,7 +19,7 @@ const Signup = (props) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8800/api/signup`,
+        `https://startoonlabs-dashboard-server.onrender.com/api/signup`,
         { name, email, password, gender }
       );
       const json = response.data;
