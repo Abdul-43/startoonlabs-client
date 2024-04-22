@@ -9,7 +9,7 @@ function Dashboard() {
 
   const getuserdata = async ({ token }) => {
     try {
-      let response = await axios.get(`http://localhost:8800/api/get`, {
+      let response = await axios.get(`https://startoonlabs-dashboard-server.onrender.com/api/get`, {
         headers: {
           token,
         },
