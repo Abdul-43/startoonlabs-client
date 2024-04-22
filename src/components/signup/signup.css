@@ -1,0 +1,16 @@
+.register-img{
+    width: 100px;
+    height: 100px;
+}
+.register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* @media screen and (min-width:768) {
+    .register{
+        display: flex;
+        flex-direction: column;
+    }
+} */
