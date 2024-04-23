@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const [data, setData] = useState("");
-  const [usertype, setUserType] = useState("");
+  const [type, setType] = useState("");
   let navigate = useNavigate();
 
   const getuserdata = async ({ token }) => {
@@ -15,7 +15,7 @@ function Dashboard() {
         },
       });
       let details = response.data;
-      console.log(details, "details");
+
       return details;
     } catch (error) {
       alert("try again later");
@@ -24,14 +24,14 @@ function Dashboard() {
 
   const fetchdata = async () => {
     let token = localStorage.getItem("token");
-    console.log("test", token);
+
     let details = await getuserdata({ token });
-    console.log(details);
+
     if (details && details.message === "User data") {
-      setUserType("user");
+      setType("user");
       setData(details.data);
     } else if (details && details.message === "All user data") {
-      setUserType("admin");
+      setType("admin");
       setData(details.data);
     }
   };
@@ -45,7 +45,7 @@ function Dashboard() {
   }, []);
   return (
     <div className="container my-5 text-center">
-      {usertype == "user" && (
+      {type == "user" && (
         <>
           <h1>Welcome to Dashboard</h1>
           <p>Name: {data.name}</p>
@@ -54,7 +54,7 @@ function Dashboard() {
           <p>Last Login date: {data.lastLoginDate}</p>
         </>
       )}
-      {usertype == "admin" && (
+      {type == "admin" && (
         <>
           <table className="table">
             <thead className="thead-dark">
