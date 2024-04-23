@@ -23,7 +23,6 @@ const Signup = (props) => {
         { name, email, password, gender }
       );
       const json = response.data;
-      console.log(json);
       if (json.success) {
         localStorage.setItem("token", json.token);
         navigate("/dashboard");
@@ -42,7 +41,7 @@ const Signup = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(form)
+
   return (
     <div className="h100  container register">
       <form className="col-6" onSubmit={handleSubmit}>
